@@ -4,14 +4,28 @@ var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
-  entry: [
-    "babel-polyfill",
-    "./index"
-  ],
+  entry: {
+    presentation: [
+      "babel-polyfill",
+      "./index"
+    ],
+    'demo-typeahead': [
+      "babel-polyfill",
+      "./demo-typeahead"
+    ],
+    'demo-redux': [
+      "babel-polyfill",
+      "./demo-redux"
+    ],
+    'demo-trailing-letters': [
+      "babel-polyfill",
+      "./demo-trailing-letters"
+    ]
+  },
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/dist/"
+    filename: "[name].js",
+    publicPath: "/dist"
   },
   plugins: [
     new webpack.DefinePlugin({
