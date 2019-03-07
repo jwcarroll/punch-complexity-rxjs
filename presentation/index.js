@@ -31,6 +31,7 @@ import {
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
+import mapValues from "lodash/mapValues";
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
@@ -44,7 +45,7 @@ require("normalize.css");
 require("../assets/styles/nice-scrollbar.css");
 require("animate.css");
 
-const images = {
+const images = fixImagePaths({
   rxjsLogo: require("../assets/rxjs-logo.png"),
   resultStackLogo: require("../assets/rs-banner-transparent.png"),
   rxjsSnakeOil: require("../assets/rxjs-oil.png"),
@@ -54,7 +55,7 @@ const images = {
   eventsOverTimeYellow: require("../assets/events-over-time-yellow.png"),
   eventsOverTimeBlue: require("../assets/events-over-time-blue.png"),
   jarjar: require("../assets/jarjar.jpg")
-};
+});
 
 const data = {
   users: require("../assets/snippets/sample-data.json")
@@ -118,35 +119,6 @@ export default class Presentation extends React.Component {
               </Text>
             </Fill>
           </Layout>
-        </Slide>
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Image
-            src={images.resultStackLogo.replace("/", "")}
-            margin="0px auto 40px"
-          />
-          <Appear>
-            <div style={{ marginBottom: "40px" }}>
-              <RawHtml
-                html={require("raw-loader!../assets/rs-capabilities.html")}
-              />
-            </div>
-          </Appear>
-          <Appear>
-            <div>
-              <Layout>
-                <Fill>
-                  <Text margin="40px 0 0" textColor="quartenary" size={1} bold>
-                    Josh Carroll
-                  </Text>
-                </Fill>
-                <Fill>
-                  <Text margin="40px 0 0" textColor="quartenary" size={1} bold>
-                    CTO
-                  </Text>
-                </Fill>
-              </Layout>
-            </div>
-          </Appear>
         </Slide>
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
@@ -1014,4 +986,13 @@ function NoteImage(props) {
       <img {...props} />
     </div>
   );
+}
+
+function fixImagePaths(images){
+  const oldPaths = images;
+  const newPaths = mapValues(images, (v) => v.replace(/^\/dist/, '/dist/'));
+
+  console.log(oldPaths, newPaths);
+
+  return newPaths;
 }
