@@ -131,9 +131,22 @@ export default class Presentation extends React.Component {
           </Appear>
           <Appear>
             <Text margin="40px 0 0" size={1} bold>
-              <Link href="http://reactivex.io/">http://reactivex.io/</Link>
+              <Link href="http://rxjs.dev/">http://rxjs.dev/</Link>
             </Text>
           </Appear>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="black">
+          <BlockQuote>
+            <Quote>RxJS is a library for reactive programming using Observables,</Quote>
+            <Quote>to make it easier to compose asynchronous or callback-based code.</Quote>
+            <Cite>rxjs.dev</Cite>
+          </BlockQuote>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="black">
+          <BlockQuote>
+            <Quote>This project is a rewrite of Reactive-Extensions/RxJS</Quote>
+            <Cite>rxjs.dev</Cite>
+          </BlockQuote>
         </Slide>
         <Slide transition={["slide"]} bgColor="black">
           <BlockQuote>
@@ -214,24 +227,24 @@ export default class Presentation extends React.Component {
             </Fill>
             <Fill>
               <Appear>
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHeaderItem padding="10px">Id</TableHeaderItem>
-                      <TableHeaderItem padding="10px">Name</TableHeaderItem>
-                      <TableHeaderItem padding="10px">Age</TableHeaderItem>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
+                <table>
+                  <thead>
+                    <tr>
+                      <th padding="10px">Id</th>
+                      <th padding="10px">Name</th>
+                      <th padding="10px">Age</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                     {data.users.map(u => (
-                      <TableRow>
-                        <TableItem>{u.id}</TableItem>
-                        <TableItem>{u.name}</TableItem>
-                        <TableItem>{u.age}</TableItem>
-                      </TableRow>
+                      <tr>
+                        <td>{u.id}</td>
+                        <td>{u.name}</td>
+                        <td>{u.age}</td>
+                      </tr>
                     ))}
-                  </TableBody>
-                </Table>
+                  </tbody>
+                </table>
               </Appear>
             </Fill>
           </Layout>

@@ -1,7 +1,7 @@
 import { fromEvent, from, of } from "rxjs";
 import { mergeMap, delay } from "rxjs/operators";
 
-const letters = createLetters("Thank You, Connect.Tech 2018!");
+const letters = createLetters("Thank You, Scenic City Summit 2019!");
 const spacing = 40;
 const animationLength = 1000;
 
