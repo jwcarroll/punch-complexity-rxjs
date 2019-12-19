@@ -2,25 +2,14 @@
 
 var path = require("path");
 var webpack = require("webpack");
+const TerserPlugin = require("terser-webpack-plugin-legacy");
 
 module.exports = {
   entry: {
-    presentation: [
-      "babel-polyfill",
-      "./index"
-    ],
-    'demo-typeahead': [
-      "babel-polyfill",
-      "./demo-typeahead"
-    ],
-    'demo-redux': [
-      "babel-polyfill",
-      "./demo-redux"
-    ],
-    'demo-trailing-letters': [
-      "babel-polyfill",
-      "./demo-trailing-letters"
-    ]
+    presentation: ["babel-polyfill", "./index"],
+    "demo-typeahead": ["babel-polyfill", "./demo-typeahead"],
+    "demo-redux": ["babel-polyfill", "./demo-redux"],
+    "demo-trailing-letters": ["babel-polyfill", "./demo-trailing-letters"]
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -30,32 +19,39 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
-        "NODE_ENV": JSON.stringify("production")
+        NODE_ENV: JSON.stringify("production")
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
+    new TerserPlugin({
+      parallel: true,
+      terserOptions: {
+        ecma: 6
       }
     })
   ],
   module: {
-    loaders: [{
-      test: /\.md$/,
-      loader: "html-loader!markdown-loader?gfm=false"
-    }, {
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      loader: "babel-loader"
-    }, {
-      test: /\.css$/,
-      loader: "style-loader!css-loader"
-    }, {
-      test: /\.(png|jpg|gif)$/,
-      loader: "url-loader?limit=8192"
-    }, {
-      test: /\.svg$/,
-      loader: "url-loader?limit=10000&mimetype=image/svg+xml"
-    }]
+    loaders: [
+      {
+        test: /\.md$/,
+        loader: "html-loader!markdown-loader?gfm=false"
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: "url-loader?limit=8192"
+      },
+      {
+        test: /\.svg$/,
+        loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+      }
+    ]
   }
 };

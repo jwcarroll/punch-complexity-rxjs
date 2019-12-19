@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import * as _ from 'lodash';
 import "rxjs/add/observable/fromPromise";
 
-const api = 'http://swapi.co/api';
+const api = 'https://swapi.co/api';
 
 export class ProductionStarWarsService {
   getEpisode(episodeNumber) {
