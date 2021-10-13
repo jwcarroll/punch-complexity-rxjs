@@ -6,11 +6,11 @@ const myObservable$ =
     observer.error("Oh Noes!!!");
   });
 
-myObservable$.subscribe(
-  val => console.log(val),
-  err => console.log(err),
-  () => console.log("Complete!")
-);
+myObservable$.subscribe({
+  next: val => console.log(val),
+  error: err => console.log(err),
+  complete: () => console.log("Complete!")
+});
 
 
 

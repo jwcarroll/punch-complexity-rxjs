@@ -14,7 +14,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@reactivex/rxjs": "^6.5.3",
     "animate.css": "^3.7.0",
     "d3": "^5.7.0",
     "lodash": "^4.17.15",
@@ -23,7 +22,6 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "rxjs": "^7.4.0",
-    "rxjs-compat": "^6.5.3",
     "shortid": "^2.2.13",
     "spectacle": "^4.4.0",
     "spectacle-code-slide": "^0.5.2",

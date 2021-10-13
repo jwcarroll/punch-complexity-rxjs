@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+import { from } from "rxjs";
 import * as _ from 'lodash';
 
 const api = 'https://swapi.co/api';
@@ -14,7 +14,7 @@ export class ProductionStarWarsService {
         return _.find(films, { episode_id: episodeNumber })
       });
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   getCharacter(id) {
@@ -23,7 +23,7 @@ export class ProductionStarWarsService {
         return res.json();
       });
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   getAllCharacters() {
@@ -32,7 +32,7 @@ export class ProductionStarWarsService {
         return res.json();
       });
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   findCharacters(searchTerm) {
@@ -42,7 +42,7 @@ export class ProductionStarWarsService {
       })
       .then(getResults);
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   findVehicles(searchTerm) {
@@ -52,7 +52,7 @@ export class ProductionStarWarsService {
       })
       .then(getResults);
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   findStarships(searchTerm) {
@@ -62,7 +62,7 @@ export class ProductionStarWarsService {
       })
       .then(getResults);
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   getPlanet(id) {
@@ -71,7 +71,7 @@ export class ProductionStarWarsService {
         return res.json();
       });
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 }
 

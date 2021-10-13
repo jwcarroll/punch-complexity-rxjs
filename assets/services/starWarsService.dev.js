@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { from } from 'rxjs';
 
 const api = 'http://localhost:4000';
 
@@ -10,7 +10,7 @@ export class DevStarWarsService {
       })
       .then(films => films && films[0]);
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   getCharacter(id) {
@@ -19,7 +19,7 @@ export class DevStarWarsService {
         return res.json();
       });
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   getAllCharacters() {
@@ -28,7 +28,7 @@ export class DevStarWarsService {
         return res.json();
       });
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   findCharacters(searchTerm) {
@@ -37,7 +37,7 @@ export class DevStarWarsService {
         return res.json();
       });
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   findVehicles(searchTerm) {
@@ -46,7 +46,7 @@ export class DevStarWarsService {
         return res.json();
       });
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   findStarships(searchTerm) {
@@ -55,7 +55,7 @@ export class DevStarWarsService {
         return res.json();
       });
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 
   getPlanet(id) {
@@ -64,6 +64,6 @@ export class DevStarWarsService {
         return res.json();
       });
 
-    return Observable.fromPromise(request);
+    return from(request);
   }
 }
