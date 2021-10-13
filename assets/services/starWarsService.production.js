@@ -1,6 +1,5 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from "rxjs";
 import * as _ from 'lodash';
-import "rxjs/add/observable/fromPromise";
 
 const api = 'https://swapi.co/api';
 
@@ -80,6 +79,6 @@ function getResults(paged) {
   return paged && paged.results;
 }
 
-function cleanId(id){
+function cleanId(id) {
   return (id || '').replace(/[^0-9]*/g, '');
 }

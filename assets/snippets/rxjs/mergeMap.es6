@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 import starWarsService from '../../services/starWarsService';
 
 const episodes$ = interval(500)
-  .pipe(skip(1),take(7));
+  .pipe(skip(1), take(7));
 
 episodes$
   .pipe(
@@ -18,9 +18,9 @@ episodes$
     console.stream('Planets').log(planet.name);
   });
 
-function onlyTheGoodOnes(obs){
+function onlyTheGoodOnes(obs) {
   return obs.pipe(filter(
-    v => _.some([4,5,6], id => id === v)));
+    v => _.some([4, 5, 6], id => id === v)));
 }
 
 

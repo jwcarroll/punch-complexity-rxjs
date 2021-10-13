@@ -1,6 +1,6 @@
 import { fromEvent } from "rxjs";
 
-const keyPresses$ = 
+const keyPresses$ =
   fromEvent(document, "keypress");
 
 keyPresses$.subscribe(e => {

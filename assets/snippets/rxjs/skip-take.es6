@@ -13,7 +13,7 @@ nums$
     val => {
       console.stream("skip, take").log(val);
     },
-    err => {},
+    err => { },
     () => {
       console.log("Finished!");
     }

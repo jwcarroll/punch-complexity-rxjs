@@ -99,7 +99,7 @@ export default class Presentation extends React.Component {
     return (
       <Deck theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
-        <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Punch Complexity in The Face With RxJS
           </Heading>
           <Image
@@ -180,18 +180,18 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["slide"]} bgColor="black">
           <Image src={images.rxjsSnakeOil.replace("/", "")} height={500} />
-          
-            <Appear>
-              <Heading size={4} textColor="primary">
-                RxJS Oil...
-              </Heading>
-            </Appear>
-            <Appear>
-              <Heading size={4} textColor="primary">
-                Cures Programming!
-              </Heading>
-            </Appear>
-          
+
+          <Appear>
+            <Heading size={4} textColor="primary">
+              RxJS Oil...
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={4} textColor="primary">
+              Cures Programming!
+            </Heading>
+          </Appear>
+
         </Slide>
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading size={1} textColor="primary">
@@ -221,7 +221,7 @@ export default class Presentation extends React.Component {
             <Fill>
               <Appear>
                 <Heading size={3} textColor="tertiary">
-                  =>
+                  {"=>"}
                 </Heading>
               </Appear>
             </Fill>
@@ -1001,7 +1001,7 @@ function NoteImage(props) {
   );
 }
 
-function fixImagePaths(images){
+function fixImagePaths(images) {
   const oldPaths = images;
   const newPaths = mapValues(images, (v) => v.replace(/^\/dist/, '/dist/'));
 

@@ -9,7 +9,7 @@ doStuffAsync(val => {
         asyncMakesMeSad(newVal, bar, lastVal => {
 
           doStuff(val, bar);
-          
+
           andMore(foo, lastVal);
         });
       });
