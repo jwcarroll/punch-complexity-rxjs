@@ -1,7 +1,7 @@
 import { from } from "rxjs";
 import * as _ from 'lodash';
 
-const api = 'https://swapi.co/api';
+const api = 'https://swapi.dev/api';
 
 export class ProductionStarWarsService {
   getEpisode(episodeNumber) {

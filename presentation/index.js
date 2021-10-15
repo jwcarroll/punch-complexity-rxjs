@@ -855,6 +855,50 @@ export default class Presentation extends React.Component {
             }
           ]}
         />
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
+          ranges={[
+            { loc: [0, 0], title: "Crazy Demo" },
+            { loc: [4, 7], note: "Same list of episodes asynchronous" },
+            { loc: [8, 9], note: "Again... do we really have to say it?" },
+            {
+              loc: [8, 9],
+              title: "*cough*",
+              note: <NoteImage src={images.jarjar} />
+            },
+            { loc: [10, 13], note: "Get episodes and characters" },
+            { loc: [20, 21], note: "Get only male characters" },
+            { loc: [21, 22], note: "Group by character name" },
+            { loc: [22, 24], note: "Reduce into arrays of characters" },
+            {
+              loc: [24, 28],
+              note: "Map to character name and count of moves seen in"
+            },
+            { loc: [28, 32], note: "Print the final results" },
+            { loc: [13, 20], note: "Retry on failure" },
+            {
+              loc: [13, 20],
+              note: (
+                <CodeRunner
+                  code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
+                />
+              )
+            },
+            { loc: [0, 0], title: "But Wait!" },
+            { loc: [0, 0], title: "Network?" },
+            { loc: [13, 20], note: "Retry on failure" },
+            {
+              loc: [13, 20],
+              note: (
+                <CodeRunner
+                  code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
+                />
+              )
+            }
+          ]}
+        />
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading
             size={1}
@@ -944,50 +988,7 @@ export default class Presentation extends React.Component {
             </Text>
           </Layout>
         </Slide>
-        <CodeSlide
-          transition={[]}
-          lang="js"
-          code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
-          ranges={[
-            { loc: [0, 0], title: "Crazy Demo" },
-            { loc: [4, 7], note: "Same list of episodes asynchronous" },
-            { loc: [8, 9], note: "Again... do we really have to say it?" },
-            {
-              loc: [8, 9],
-              title: "*cough*",
-              note: <NoteImage src={images.jarjar} />
-            },
-            { loc: [10, 13], note: "Get episodes and characters" },
-            { loc: [20, 21], note: "Get only male characters" },
-            { loc: [21, 22], note: "Group by character name" },
-            { loc: [22, 24], note: "Reduce into arrays of characters" },
-            {
-              loc: [24, 28],
-              note: "Map to character name and count of moves seen in"
-            },
-            { loc: [28, 32], note: "Print the final results" },
-            { loc: [13, 20], note: "Retry on failure" },
-            {
-              loc: [13, 20],
-              note: (
-                <CodeRunner
-                  code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
-                />
-              )
-            },
-            { loc: [0, 0], title: "But Wait!" },
-            { loc: [0, 0], title: "Network?" },
-            { loc: [13, 20], note: "Retry on failure" },
-            {
-              loc: [13, 20],
-              note: (
-                <CodeRunner
-                  code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
-                />
-              )
-            }
-          ]}
-        />
+
       </Deck>
     );
   }

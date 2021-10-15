@@ -1,16 +1,16 @@
 import { fromEvent, from, of } from "rxjs";
 import { mergeMap, delay } from "rxjs/operators";
 
-const letters = createLetters("Thank You, Scenic City Summit 2019!");
+const letters = createLetters("Thank You, Momentum!");
 const spacing = 40;
-const animationLength = 1000;
+const animationLength = 1500;
 
 fromEvent(document, "mousemove")
   .pipe(
     mergeMap(({ clientX, clientY }) =>
       from(letters).pipe(
         mergeMap((el, i) => {
-          const left = clientX + i * spacing + 15;
+          const left = clientX + i * spacing + 5;
           const top = clientY;
 
           return of({ el, top, left }).pipe(
