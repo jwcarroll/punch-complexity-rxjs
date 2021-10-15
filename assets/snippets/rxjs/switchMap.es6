@@ -2,9 +2,9 @@ import { fromEvent } from "rxjs";
 import * as _ from "lodash";
 import starWarsService from "../../services/starWarsService";
 
-const keypresses$ = 
+const keypresses$ =
   fromEvent(document, "keypress")
-  .pipe(map(e => e.key));
+    .pipe(map(e => e.key));
 
 keypresses$
   .pipe(
@@ -14,7 +14,7 @@ keypresses$
     switchMap(id => starWarsService.getEpisode(id))
   )
   .subscribe(mov => {
-    const title = 
+    const title =
       (mov && mov.title) || "[Not Found]";
 
     console.stream("Films").log(title);

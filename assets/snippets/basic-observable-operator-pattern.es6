@@ -1,16 +1,16 @@
 const Observable = (observer) => {
-    for(let i = 0; i < 10; i++){
+    for (let i = 0; i < 10; i++) {
         observer.next(i);
     }
 
-    return () => {};
+    return () => { };
 };
 
 const Filter = (observable, predicate) => {
     return (observer) => {
         const filterObserver = {
             next: val => {
-                if(predicate(val)){
+                if (predicate(val)) {
                     observer.next(val);
                 }
             }
@@ -30,7 +30,7 @@ EvenNumbers({
     next: val => console.stream('even').log(val)
 });
 
-const EvenNumbersGreaterThanFive = 
+const EvenNumbersGreaterThanFive =
     Filter(EvenNumbers, val => {
         console.stream('even').log(val);
 

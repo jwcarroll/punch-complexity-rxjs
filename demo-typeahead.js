@@ -30,11 +30,11 @@ searches$
       renderResults([], true);
     }),
     switchMap(search =>
-      forkJoin(
+      forkJoin([
         starWarsService.findCharacters(search),
         starWarsService.findVehicles(search),
         starWarsService.findStarships(search)
-      )
+      ])
     ),
     delay(2000)
   )

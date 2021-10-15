@@ -1,1 +1,0 @@
-const resultStack = (vision) => reality;

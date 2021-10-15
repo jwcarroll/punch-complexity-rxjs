@@ -4,11 +4,11 @@ const Observable = (observer) => {
     observer.next(3);
 
     //void unsubscribe function
-    return () => {};
+    return () => { };
 };
 
 Observable({
-    next:val => console.log(val)
+    next: val => console.log(val)
 });
 
 

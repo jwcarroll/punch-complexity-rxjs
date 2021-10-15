@@ -2,7 +2,7 @@ import { fromEvent } from "rxjs";
 import { map, filter } from "rxjs/operators";
 import * as _ from "lodash";
 
-const keyPresses$ = 
+const keyPresses$ =
   fromEvent(document, "keypress");
 
 keyPresses$

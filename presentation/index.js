@@ -99,7 +99,7 @@ export default class Presentation extends React.Component {
     return (
       <Deck theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
-        <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Punch Complexity in The Face With RxJS
           </Heading>
           <Image
@@ -180,18 +180,18 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["slide"]} bgColor="black">
           <Image src={images.rxjsSnakeOil.replace("/", "")} height={500} />
-          
-            <Appear>
-              <Heading size={4} textColor="primary">
-                RxJS Oil...
-              </Heading>
-            </Appear>
-            <Appear>
-              <Heading size={4} textColor="primary">
-                Cures Programming!
-              </Heading>
-            </Appear>
-          
+
+          <Appear>
+            <Heading size={4} textColor="primary">
+              RxJS Oil...
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={4} textColor="primary">
+              Cures Programming!
+            </Heading>
+          </Appear>
+
         </Slide>
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading size={1} textColor="primary">
@@ -221,7 +221,7 @@ export default class Presentation extends React.Component {
             <Fill>
               <Appear>
                 <Heading size={3} textColor="tertiary">
-                  =>
+                  {"=>"}
                 </Heading>
               </Appear>
             </Fill>
@@ -855,6 +855,50 @@ export default class Presentation extends React.Component {
             }
           ]}
         />
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
+          ranges={[
+            { loc: [0, 0], title: "Crazy Demo" },
+            { loc: [4, 7], note: "Same list of episodes asynchronous" },
+            { loc: [8, 9], note: "Again... do we really have to say it?" },
+            {
+              loc: [8, 9],
+              title: "*cough*",
+              note: <NoteImage src={images.jarjar} />
+            },
+            { loc: [10, 13], note: "Get episodes and characters" },
+            { loc: [20, 21], note: "Get only male characters" },
+            { loc: [21, 22], note: "Group by character name" },
+            { loc: [22, 24], note: "Reduce into arrays of characters" },
+            {
+              loc: [24, 28],
+              note: "Map to character name and count of moves seen in"
+            },
+            { loc: [28, 32], note: "Print the final results" },
+            { loc: [13, 20], note: "Retry on failure" },
+            {
+              loc: [13, 20],
+              note: (
+                <CodeRunner
+                  code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
+                />
+              )
+            },
+            { loc: [0, 0], title: "But Wait!" },
+            { loc: [0, 0], title: "Network?" },
+            { loc: [13, 20], note: "Retry on failure" },
+            {
+              loc: [13, 20],
+              note: (
+                <CodeRunner
+                  code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
+                />
+              )
+            }
+          ]}
+        />
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading
             size={1}
@@ -944,50 +988,7 @@ export default class Presentation extends React.Component {
             </Text>
           </Layout>
         </Slide>
-        <CodeSlide
-          transition={[]}
-          lang="js"
-          code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
-          ranges={[
-            { loc: [0, 0], title: "Crazy Demo" },
-            { loc: [4, 7], note: "Same list of episodes asynchronous" },
-            { loc: [8, 9], note: "Again... do we really have to say it?" },
-            {
-              loc: [8, 9],
-              title: "*cough*",
-              note: <NoteImage src={images.jarjar} />
-            },
-            { loc: [10, 13], note: "Get episodes and characters" },
-            { loc: [20, 21], note: "Get only male characters" },
-            { loc: [21, 22], note: "Group by character name" },
-            { loc: [22, 24], note: "Reduce into arrays of characters" },
-            {
-              loc: [24, 28],
-              note: "Map to character name and count of moves seen in"
-            },
-            { loc: [28, 32], note: "Print the final results" },
-            { loc: [13, 20], note: "Retry on failure" },
-            {
-              loc: [13, 20],
-              note: (
-                <CodeRunner
-                  code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
-                />
-              )
-            },
-            { loc: [0, 0], title: "But Wait!" },
-            { loc: [0, 0], title: "Network?" },
-            { loc: [13, 20], note: "Retry on failure" },
-            {
-              loc: [13, 20],
-              note: (
-                <CodeRunner
-                  code={require("raw-loader!../assets/snippets/rxjs/mergeMap.complex.es6")}
-                />
-              )
-            }
-          ]}
-        />
+
       </Deck>
     );
   }
@@ -1001,7 +1002,7 @@ function NoteImage(props) {
   );
 }
 
-function fixImagePaths(images){
+function fixImagePaths(images) {
   const oldPaths = images;
   const newPaths = mapValues(images, (v) => v.replace(/^\/dist/, '/dist/'));
 

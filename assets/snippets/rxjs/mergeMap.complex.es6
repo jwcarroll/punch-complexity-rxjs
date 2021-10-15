@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 import starWarsService from '../../services/starWarsService';
 
 const episodes$ = interval(500)
-    .pipe(skip(1),take(7));
+  .pipe(skip(1), take(7));
 
 episodes$.pipe(
   onlyTheGoodOnes,

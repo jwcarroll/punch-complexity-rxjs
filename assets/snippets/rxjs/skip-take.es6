@@ -9,12 +9,12 @@ nums$
     skip(20),
     take(10)
   )
-  .subscribe(
-    val => {
+  .subscribe({
+    next: val => {
       console.stream("skip, take").log(val);
     },
-    err => {},
-    () => {
+    error: err => { },
+    complete: () => {
       console.log("Finished!");
     }
-  );
+  });
