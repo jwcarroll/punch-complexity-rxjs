@@ -16,7 +16,7 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "d3": "^5.7.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "lodash.clonedeep": "^4.5.0",
     "normalize.css": "7.0.0",
     "react": "^16.10.2",
