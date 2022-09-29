@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "animate.css": "^3.7.0",
-    "d3": "^5.7.0",
+    "d3": "^7.6.1",
     "lodash": "^4.17.15",
     "lodash.clonedeep": "^4.5.0",
     "normalize.css": "7.0.0",
@@ -23,7 +23,7 @@
     "react-dom": "^16.10.2",
     "rxjs": "^7.4.0",
     "shortid": "^2.2.13",
-    "spectacle": "^4.4.0",
+    "spectacle": "^9.6.0",
     "spectacle-code-slide": "^0.5.2",
     "spectacle-renderer": "^0.0.3"
   },
